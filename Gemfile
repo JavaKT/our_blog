@@ -65,3 +65,5 @@ gem 'devise'
 
 gem 'pry-rails'
 gem "haml-rails"
+gem 'devise-i18n'
+gem 'devise-i18n-views'

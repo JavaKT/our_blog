@@ -2,28 +2,41 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :nickname
+    = f.label :nickname,"ニックネーム"
     %br/
     = f.text_field :nickname, autofocus: true
   .field
-    = f.label :email
+    = f.label :email, "メールアドレス"
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
-    = f.label :password
+    = f.label :password, "パスワード"
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
-    = f.label :password_confirmation
+    = f.label :password_confirmation,"パスワード確認用"
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .field
-    = f.label :nickname
+    = f.label :name,"お名前"
     %br/
-    = f.text_field :nickname, autofocus: true
+    = f.text_field :name , autofocus: true
+  .field
+    = f.label :kana,"カナ"
+    %br/
+    = f.text_field :kana , autofocus: true
+  .field
+    = f.label :birthday, "生年月日"
+    %br/
+    = f.date_field :birthday , autofocus: true
+  .filed 
+    = f.label :tell_no , "電話番号 ハイフンをつけて入力して下さい"
+    %br/
+    = f.text_field :tell_no , autofocus: true
+
   .actions
     = f.submit "登録する"
 = render "devise/shared/links"
