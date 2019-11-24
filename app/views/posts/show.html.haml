@@ -1,0 +1,11 @@
+.postTitle
+  = @post.title
+.postDate
+  = @post.created_at
+.postAuthor
+- if user_signed_in? && current_user.id == @post.user_id
+  .postManage
+    = link_to "????", edit_post_path(@post.id), class: "postManage__edit"
+    = link_to "????", post_path(@post.id), method: :delete, class: "postManage__delete"
+.postText
+  = simple_format @post.content
